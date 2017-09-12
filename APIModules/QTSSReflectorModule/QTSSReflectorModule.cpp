@@ -870,7 +870,7 @@ void DoAnnounceAddRequiredSDPLines(QTSS_StandardRTSP_Params* inParams, Resizeabl
             editedSDP->Put(tempBuff, buffLen );
 
             editedSDP->Put(" ");
-            qtss_snprintf(tempBuff, sizeof(tempBuff) -1, "%"_64BITARG_"d", (SInt64) OS::UnixTime_Secs() + 2208988800LU);
+            qtss_snprintf(tempBuff, sizeof(tempBuff) -1, "%" _64BITARG_ "d", (SInt64) OS::UnixTime_Secs() + 2208988800LU);
             editedSDP->Put(tempBuff);
 
             editedSDP->Put(" IN IP4 ");
@@ -1121,12 +1121,12 @@ void DoDescribeAddRequiredSDPLines(QTSS_StandardRTSP_Params* inParams, Reflector
             editedSDP->Put("o=broadcast_sdp ");
             char tempBuff[256]= "";               
             tempBuff[255] = 0;
-            qtss_snprintf(tempBuff,sizeof(tempBuff) - 1, "%"_U32BITARG_"", *(UInt32 *) &theSession);
+            qtss_snprintf(tempBuff,sizeof(tempBuff) - 1, "%" _U32BITARG_ "", *(UInt32 *) &theSession);
             editedSDP->Put(tempBuff);
 
             editedSDP->Put(" ");
             // modified date is in milliseconds.  Convert to NTP seconds as recommended by rfc 2327
-            qtss_snprintf(tempBuff, sizeof(tempBuff) - 1, "%"_64BITARG_"d", (SInt64) (modDate/1000) + 2208988800LU);
+            qtss_snprintf(tempBuff, sizeof(tempBuff) - 1, "%" _64BITARG_ "d", (SInt64) (modDate/1000) + 2208988800LU);
             editedSDP->Put(tempBuff);
 
             editedSDP->Put(" IN IP4 ");

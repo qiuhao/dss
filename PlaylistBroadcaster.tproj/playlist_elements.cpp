@@ -60,7 +60,7 @@ UInt32 MediaStream::GetACName(char* ioCNameBuffer)
     ioCNameBuffer[0] = 1;
     
     //Unique cname is constructed from the base name and the current time
-    qtss_sprintf(&ioCNameBuffer[2], " %s%"_64BITARG_"d", "QTSS", OS::Milliseconds() / 1000);
+    qtss_sprintf(&ioCNameBuffer[2], " %s%" _64BITARG_ "d", "QTSS", OS::Milliseconds() / 1000);
     UInt32 cNameLen = ::strlen(&ioCNameBuffer[2]);
     //2nd byte of CName should be length
     ioCNameBuffer[1] = (UInt8) cNameLen ;//doesn't count indicator or length byte

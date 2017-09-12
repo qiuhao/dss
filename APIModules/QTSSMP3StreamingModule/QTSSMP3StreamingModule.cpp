@@ -2614,7 +2614,7 @@ QTSS_Error LogRequest(QTSS_RTSPSessionObject inRTSPSession, MP3ClientSession* cl
     reqResult = client->GetResult();
 
     // Format the access log entry parameters here...
-    qtss_sprintf(logbuffer, "%s \"%s\" [%s] \"%s\" %d %"_S32BITARG_" %"_S32BITARG_"\n",
+    qtss_sprintf(logbuffer, "%s \"%s\" [%s] \"%s\" %d %" _S32BITARG_ " %" _S32BITARG_ "\n",
         remoteAddress,
                 userAgent,
         theDateBuffer,
@@ -2854,7 +2854,7 @@ QTSS_Error FilterRequest(QTSS_Filter_Params* inParams)
                         // construct the reply string for the client.
                         qtss_snprintf(tmp,sizeof(tmp) -1, "http://%d.%d.%d.%d:8000%s", x1,x2,x3,x4, theURL);
                         ulen = ::strlen(tmp);
-                        qtss_snprintf(tmpbuf,sizeof(tmpbuf) -1, "%s %"_U32BITARG_"\r\n\r\n%s\r\n", gM3UReplyHeader, ulen, tmp);
+                        qtss_snprintf(tmpbuf,sizeof(tmpbuf) -1, "%s %" _U32BITARG_ "\r\n\r\n%s\r\n", gM3UReplyHeader, ulen, tmp);
                         ulen = ::strlen(tmpbuf);
             // send the reply to the client.
             err = QTSS_Write(inParams->inRTSPRequest, tmpbuf, ulen, NULL, qtssWriteFlagsBufferData);

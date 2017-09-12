@@ -388,7 +388,7 @@ static void AddPassword(char *user, char* realm, FILE *f)
  */
 static void usage(void)
 {
-    qtss_fprintf(stderr, "  qtpasswd %s built on: %s\n", kVersionString, __DATE__ ", "__TIME__);
+    qtss_fprintf(stderr, "  qtpasswd %s built on: %s\n", kVersionString, __DATE__ ", " __TIME__);
     qtss_fprintf(stderr, "  Usage: qtpasswd [-F] [-f filename] [-c] [-g groupsfilename] [-r realm] [-p password] [-P passwordfile] [-A group] [-D group] [-d] [username]\n");
     qtss_fprintf(stderr, "  -F   Don't ask for confirmation when deleting users or overwriting existing files.\n");
     qtss_fprintf(stderr, "  -f   Password file to manipulate (Default is \"%s\").\n", kDefaultQTPasswdFilePath);
@@ -418,7 +418,8 @@ static void usage(void)
     exit(1);
 }
 
-/* unused routine
+#ifdef __Win32__
+// unused routine
 static char* SetTempPath(char* bufferToSet, int bufferLen, char* base, int baseLen, char id)
 {
     if (bufferLen > 0 && bufferToSet != NULL)
@@ -433,7 +434,7 @@ static char* SetTempPath(char* bufferToSet, int bufferLen, char* base, int baseL
   
     return bufferToSet;
 }
-*/
+#endif
 
 
 static void AddOrDeleteUserFromGroup(int add, char *userName, char *groupName, char *inGroupsFilePath, char *inTempGroupsFilePath)

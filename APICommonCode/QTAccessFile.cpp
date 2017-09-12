@@ -44,13 +44,16 @@
 #include "QTAccessFile.h"
 #include "OSArrayObjectDeleter.h"
 
-
+#ifndef __Win32__
 #include <grp.h>
 #include <membership.h>
 #include <pwd.h>
-#include <signal.h>
 #include <unistd.h>
-     
+#else
+#include <rpc.h>
+#endif
+#include <signal.h>
+
 #define DEBUG_QTACCESS 0
 #define debug_printf if (DEBUG_QTACCESS) qtss_printf
 
@@ -610,7 +613,7 @@ if (DEBUG_QTACCESS)
     return theErr;
 }
 
-
+/*
 bool DSAccessFile::CheckGroupMembership(const char* inUsername, const char* inGroupName)
 {   
 	// In Tiger, group membership is painfully simple: we ask memberd for it!
@@ -654,6 +657,6 @@ Bool16 DSAccessFile::ValidUser( char*userName, void* extraDataPtr)
         
     return true;
 }
-
+*/
 
 

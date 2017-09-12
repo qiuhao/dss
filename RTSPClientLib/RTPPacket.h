@@ -30,7 +30,9 @@
 #ifndef _RTPPACKET_H_
 #define _RTPPACKET_H_
 
-#include "arpa/inet.h"
+#ifndef __Win32__
+#include <arpa/inet.h>
+#endif
 #include "OSHeaders.h"
 #include "StrPtrLen.h"
 

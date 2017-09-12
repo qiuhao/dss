@@ -265,7 +265,11 @@ QTSS_Error LogError(QTSS_RoleParamPtr inParamBlock)
     
                 sDupErrorStringCount = 0;
             }
-            ::strlcpy(sLastErrorString, inParamBlock->errorParams.inBuffer, sizeof(sLastErrorString));
+#ifdef __Win32__
+            ::strncpy_s(sLastErrorString, inParamBlock->errorParams.inBuffer, sizeof(sLastErrorString));
+#else
+			::strlcpy(sLastErrorString, inParamBlock->errorParams.inBuffer, sizeof(sLastErrorString));
+#endif
         
         }
 

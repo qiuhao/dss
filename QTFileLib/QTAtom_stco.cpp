@@ -142,8 +142,8 @@ void QTAtom_stco::DumpTable(void)
     for( UInt32 CurEntry = 1; CurEntry <= fNumEntries; CurEntry++ )
     {
         if (ChunkOffset(CurEntry, &offset))
-            qtss_printf("  %10"_U32BITARG_": %"_64BITARG_"u\n", CurEntry, offset);
+            qtss_printf("  %10" _U32BITARG_ ": %" _64BITARG_ "u\n", CurEntry, offset);
         else
-            qtss_printf("  %10"_U32BITARG_": QTAtom_stco::DumpTable ChunkOffset error\n", CurEntry);
+            qtss_printf("  %10" _U32BITARG_ ": QTAtom_stco::DumpTable ChunkOffset error\n", CurEntry);
     }
 }

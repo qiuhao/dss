@@ -96,7 +96,7 @@ BroadcasterSession::BroadcasterSession( UInt32 inAddr, UInt16 inPort, char* inUR
     StrPtrLen theURL(inURL);
     fSDPParser.Parse(sdpSPLPtr->Ptr, sdpSPLPtr->Len);
     if (fBurst && deepDebug)
-        printf("Burst Mode enabled: broadcast will be delayed for %"_U32BITARG_" seconds before starting\n", fBurstTime);
+        printf("Burst Mode enabled: broadcast will be delayed for %" _U32BITARG_ " seconds before starting\n", fBurstTime);
         
 #if BROADCAST_SESSION_DEBUG
 

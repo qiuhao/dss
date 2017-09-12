@@ -55,7 +55,7 @@
 namespace DirectoryServices {
 
 //-----------------------------------------------------------------------------
-// ¥ DSDataList - simple wrapper for tDataBufferPtr.
+// ?DSDataList - simple wrapper for tDataBufferPtr.
 //	This should be considered a private class, primarily used by DSNode.
 //	All methods are inlined for performance reasons (sorry).
 //	Logically, a tDataList is a collection of tDataNode's, so this

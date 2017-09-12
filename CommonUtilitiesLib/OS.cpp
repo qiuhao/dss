@@ -44,6 +44,8 @@
 
 #ifndef __Win32__
 #include <sys/time.h>
+#else
+#include <timeapi.h>
 #endif
 
 #ifdef __sgi__ 

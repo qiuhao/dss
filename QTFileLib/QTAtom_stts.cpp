@@ -317,7 +317,7 @@ void QTAtom_stts::DumpTable(void)
         SampleDuration = ntohl(SampleDuration);
 
         // Print out a listing.
-        qtss_printf("  %10"_U32BITARG_" : %10"_U32BITARG_"  %10"_U32BITARG_"\n", CurEntry, SampleCount, SampleDuration);
+        qtss_printf("  %10" _U32BITARG_ " : %10" _U32BITARG_ "  %10" _U32BITARG_ "\n", CurEntry, SampleCount, SampleDuration);
     }
 }
 
@@ -576,6 +576,6 @@ void QTAtom_ctts::DumpTable(void)
         SampleOffset = ntohl(SampleOffset);
 
         // Print out a listing.
-        qtss_printf("  %10"_U32BITARG_" : %10"_U32BITARG_"  %10"_U32BITARG_"\n", CurEntry, SampleCount, SampleOffset);
+        qtss_printf("  %10" _U32BITARG_ " : %10" _U32BITARG_ "  %10" _U32BITARG_ "\n", CurEntry, SampleCount, SampleOffset);
     }
 }

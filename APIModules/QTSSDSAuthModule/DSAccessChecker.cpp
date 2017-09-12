@@ -45,11 +45,13 @@
 
 
 // ANSI / POSIX Headers
+#ifndef __Win32__
 #include <grp.h>
 #include <membership.h>
 #include <pwd.h>
-#include <signal.h>
 #include <unistd.h>
+#endif
+#include <signal.h>
 
 // STL Headers
 #include <cstdio>

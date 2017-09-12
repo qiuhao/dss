@@ -226,6 +226,6 @@ void QTAtom_stss::DumpTable(void)
     for( UInt32 CurEntry = 1; CurEntry <= fNumEntries; CurEntry++ ) {
         //
         // Print out a listing.
-        qtss_printf("  %10"_U32BITARG_" : %10"_U32BITARG_"\n", CurEntry, fTable[CurEntry-1]);
+        qtss_printf("  %10" _U32BITARG_ " : %10" _U32BITARG_ "\n", CurEntry, fTable[CurEntry-1]);
     }
 }

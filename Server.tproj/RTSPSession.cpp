@@ -2044,7 +2044,7 @@ UInt32 RTSPSession::GenerateNewSessionID(char* ioBuffer)
     SInt64 theSessionID = (SInt64)theFirstRandom;
     theSessionID <<= 32;
     theSessionID += (SInt64)theSecondRandom;
-    qtss_sprintf(ioBuffer, "%"_64BITARG_"d", theSessionID);
+    qtss_sprintf(ioBuffer, "%" _64BITARG_ "d", theSessionID);
     Assert(::strlen(ioBuffer) < QTSS_MAX_SESSION_ID_LENGTH);
     return ::strlen(ioBuffer);
 }

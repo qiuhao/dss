@@ -42,7 +42,7 @@ copy ..\sample.mp3 DarwinStreamingServer\sample.mp3
 copy ..\sample_50kbit.3gp DarwinStreamingServer\sample_50kbit.3gp
 copy ..\sample_h264_1mbit.mp4 DarwinStreamingServer\sample_h264_1mbit.mp4
 copy ..\sample_h264_100kbit.mp4 DarwinStreamingServer\sample_h264_100kbit.mp4
-copy ..\sample_h264_300kbit.mp43 DarwinStreamingServer\sample_h264_300kbit.mp4
+copy ..\sample_h264_300kbit.mp4 DarwinStreamingServer\sample_h264_300kbit.mp4
 
 copy dynmodules_disabled\QTSSSpamDefenseModule.dll DarwinStreamingServer\QTSSSpamDefenseModule.dll
 copy dynmodules_disabled\QTSSRawFileModule.dll DarwinStreamingServer\QTSSRawFileModule.dll

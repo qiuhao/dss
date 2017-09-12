@@ -680,9 +680,11 @@ void    QTSServer::LoadCompiledInModules()
     (void)AddModule(theWebDebug);
 #endif
 
+#ifndef __Win32__
     QTSSModule* theQTSSDSAuthModule = new QTSSModule("QTSSDSAuthModule");
     (void)theQTSSDSAuthModule->SetupModule(&sCallbacks, &QTSSDSAuthModule_Main);
     (void)AddModule(theQTSSDSAuthModule); 
+#endif
 
     QTSSModule* theQTACCESSmodule = new QTSSModule("QTSSAccessModule");
     (void)theQTACCESSmodule->SetupModule(&sCallbacks, &QTSSAccessModule_Main);
@@ -1156,7 +1158,7 @@ void RTPSocketPool::SetUDPSocketOptions(UDPSocketPair* inPair)
     if (theRcvBufSize != QTSServerInterface::GetServer()->GetPrefs()->GetRTCPSocketRcvBufSizeinK())
     {
         char theRcvBufSizeStr[20];
-        qtss_sprintf(theRcvBufSizeStr, "%"_U32BITARG_"", theRcvBufSize);
+        qtss_sprintf(theRcvBufSizeStr, "%" _U32BITARG_ "", theRcvBufSize);
         //
         // For now, do not log an error, though we should enable this in the future.
         //QTSSModuleUtils::LogError(qtssWarningVerbosity, qtssMsgSockBufSizesTooLarge, theRcvBufSizeStr);

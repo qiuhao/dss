@@ -31,7 +31,9 @@
     
 */
 
+#ifndef __Win32__
 #include <arpa/inet.h>
+#endif
 //#include <stdlib.h>
 #include "ClientSession.h"
 #include "OSMemory.h"

@@ -27,7 +27,7 @@
 
     Contains:   Implementation of object defined in .h file
 
-    Copyright:  © 1998 by Apple Computer, Inc., all rights reserved.
+    Copyright:  ?1998 by Apple Computer, Inc., all rights reserved.
 
     
 

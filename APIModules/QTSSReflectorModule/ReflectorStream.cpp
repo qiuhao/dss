@@ -1568,7 +1568,7 @@ Bool16 ReflectorSocket::ProcessPacket(const SInt64& inMilliseconds,ReflectorPack
         if (theSender->fPacketQueue.GetLength() > maxQSize) //don't grow memory too big
         { 
             char outMessage[256];
-            sprintf(outMessage,"Packet Queue for port=%d qsize = %"_S32BITARG_" hit max qSize=%"_U32BITARG_"", theRemotePort,theSender->fPacketQueue.GetLength(), maxQSize);
+            sprintf(outMessage,"Packet Queue for port=%d qsize = %" _S32BITARG_ " hit max qSize=%" _U32BITARG_ "", theRemotePort,theSender->fPacketQueue.GetLength(), maxQSize);
             WarnV(false, outMessage); 
         }
 

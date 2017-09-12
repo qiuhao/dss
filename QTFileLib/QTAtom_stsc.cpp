@@ -613,7 +613,7 @@ void QTAtom_stsc::DumpTable(void)
         
         //
         // Print out a listing.
-        qtss_printf("  %10"_U32BITARG_" : %10"_U32BITARG_"   %10"_U32BITARG_"        %10"_U32BITARG_"\n",
+        qtss_printf("  %10" _U32BITARG_ " : %10" _U32BITARG_ "   %10" _U32BITARG_ "        %10" _U32BITARG_ "\n",
                CurEntry+1, FirstChunk, SamplesPerChunk, SampleDescription);
     }
 }

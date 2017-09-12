@@ -359,7 +359,7 @@ void RTPSessionInterface::CreateDigestAuthenticationNonce() {
     // Calculate nonce: MD5 of sessionid:timestamp
     SInt64 curTime = OS::Milliseconds();
     char* curTimeStr = NEW char[128];
-    qtss_sprintf(curTimeStr, "%"_64BITARG_"d", curTime);
+    qtss_sprintf(curTimeStr, "%" _64BITARG_ "d", curTime);
     
     // Delete old nonce before creating a new one
     if(fAuthNonce.Ptr != NULL)
@@ -405,7 +405,7 @@ void RTPSessionInterface::SetChallengeParams(QTSS_AuthScheme scheme, UInt32 qop,
             ::srand((unsigned int)theMicroseconds);
             UInt32 randomNum = ::rand();
             char* randomNumStr = NEW char[128];
-            qtss_sprintf(randomNumStr, "%"_U32BITARG_"", randomNum);
+            qtss_sprintf(randomNumStr, "%" _U32BITARG_ "", randomNum);
             int len = ::strlen(randomNumStr);
             fAuthOpaque.Len = Base64encode_len(len);
             char *opaqueStr = NEW char[fAuthOpaque.Len];
@@ -441,7 +441,7 @@ void RTPSessionInterface::UpdateDigestAuthChallengeParams(Bool16 newNonce, Bool1
         ::srand((unsigned int)theMicroseconds);
         UInt32 randomNum = ::rand();
         char* randomNumStr = NEW char[128];
-        qtss_sprintf(randomNumStr, "%"_U32BITARG_"", randomNum);
+        qtss_sprintf(randomNumStr, "%" _U32BITARG_ "", randomNum);
         int len = ::strlen(randomNumStr);
         fAuthOpaque.Len = Base64encode_len(len);
         char *opaqueStr = NEW char[fAuthOpaque.Len];
