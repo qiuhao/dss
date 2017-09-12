@@ -106,6 +106,27 @@ case $PLAT in
 			export NEED_SOCKETBITS
 		fi
 		;;
+		
+	Linux.x86_64)
+        echo "Configuring for the "$OSNAME" "$HARDWARENAME" platform"
+		CPLUS=g++
+		CCOMP=gcc
+		LINKER='gcc'
+ 		MAKE=make
+ 		
+		COMPILER_FLAGS="-D_REENTRANT -D__USE_POSIX -D__linux__ -Dx86_64 -pipe -fPIC"
+        INCLUDE_FLAG="-include"
+		
+		CORE_LINK_LIBS="-lpthread -ldl -lstdc++ -lm -lcrypt"
+
+		SHARED=-shared
+		MODULE_LIBS=
+		
+		if [ -f /usr/include/socketbits.h ]; then
+			NEED_SOCKETBITS=1
+			export NEED_SOCKETBITS
+		fi
+		;;
 
 	Linux.mips)
         echo "Configuring for the "$OSNAME" "$HARDWARENAME" platform"
