@@ -1175,6 +1175,32 @@ OS_Error RTSPClient::SendPlay(UInt32 inStartPlayTimeInSec, Float32 inSpeed, UInt
     return this->DoTransaction();
 }
 
+OS_Error RTSPClient::SendRecord(UInt32 inStartPlayTimeInSec)
+{
+	if (!IsTransactionInProgress())
+	{
+		qtss_sprintf(fMethod, "%s", "PLAY");
+
+		StringFormatter fmt(fSendBuffer, kReqBufSize);
+
+		fmt.PutFmtStr(
+			"RECORD %s RTSP/1.0\r\n"
+			"CSeq: %" _U32BITARG_ "\r\n"
+			"%sRange: npt=%" _U32BITARG_ ".0-\r\n"
+			"User-agent: %s\r\n",
+			fURL.Ptr, fCSeq, fSessionID.Ptr, inStartPlayTimeInSec, fUserAgent);
+
+		if (fBandwidth != 0)
+			fmt.PutFmtStr("Bandwidth: %" _U32BITARG_ "\r\n", fBandwidth);
+
+		fmt.PutFmtStr("\r\n");
+		fmt.PutTerminator();
+
+		//qtss_sprintf(fSendBuffer, "RECORD %s RTSP/1.0\r\nCSeq: %" _U32BITARG_ "\r\n%sRange: npt=7.0-\r\n%sx-prebuffer: maxtime=3.0\r\nUser-agent: %s\r\n\r\n", fURL.Ptr, fCSeq, fSessionID.Ptr, speedBuf, fUserAgent);
+	}
+	return this->DoTransaction();
+}
+
 OS_Error RTSPClient::SendPacketRangePlay(char* inPacketRangeHeader, Float32 inSpeed)
 {
     char speedBuf[128];

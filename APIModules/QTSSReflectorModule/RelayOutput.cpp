@@ -461,7 +461,7 @@ SInt64 RelayOutput::RunAnnounce()
     
     if (fAnnounceState == kSendingPlay)
     {
-        err = fClient->SendPlay(0);
+        err = fClient->SendRecord(0);
         if (err == OS_NoErr)
         {
             if (fClient->GetStatus() == 200)
